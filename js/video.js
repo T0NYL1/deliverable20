@@ -44,12 +44,15 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-if (video.muted){
+var button=document.querySelector("#mute")
+	if (video.muted){
 	video.muted=false;
 	console.log("Unmuted")
+	button.textContent="Mute"
 }else{
 	video.muted=true;
 	console.log("Muted")
+	button.textContent="Unmute"
 }
 });
 
@@ -64,11 +67,11 @@ volumeslider.addEventListener("input", function() {
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
-	video.classList.add('Old School')
+	video.classList.add('oldSchool')
 	console.log('old school')
 })
 
 document.querySelector("#orig").addEventListener("click", function() {
-	video.classList.remove('Old School')
+	video.classList.remove('oldSchool')
 	console.log('original')
 })
