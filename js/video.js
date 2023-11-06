@@ -64,11 +64,11 @@ volumeslider.addEventListener("input", function() {
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
-	video.classList.add('old-school')
+	video.classList.add('Old School')
 	console.log('old school')
 })
 
 document.querySelector("#orig").addEventListener("click", function() {
-	video.classList.remove('old-school')
+	video.classList.remove('Old School')
 	console.log('original')
 })
