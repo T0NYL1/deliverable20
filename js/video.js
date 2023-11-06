@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	document.querySelector("#volume").textContent=Math.round(video.volume *100)+"%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -57,7 +58,7 @@ var button=document.querySelector("#mute")
 });
 
 function uvd(){
-	var percentage=Math.round(video.volume*100)+"%";
+	var percentage=Math.round(video.volume*100);
 	volumedisplay.textContent =percentage+"%";
 }
 
