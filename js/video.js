@@ -58,7 +58,7 @@ var button=document.querySelector("#mute")
 
 function uvd(){
 	var percentage=Math.round(video.volume*100)
-	volumedisplay.textContent =percentage+"%";
+	volumedisplay.textContent =percentage+" %";
 }
 
 volumeslider.addEventListener("input", function() {
