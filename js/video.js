@@ -1,4 +1,6 @@
 var video=document.querySelector('.video');
+var volumeslider=document.querySelector('#slider')
+var volumedisplay=document.querySelector('#volume')
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -43,12 +45,30 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 if (video.muted){
-	video.muuted=false;
-	console.log("Unmuteed")
+	video.muted=false;
+	console.log("Unmuted")
 }else{
 	video.muted=true;
 	console.log("Muted")
 }
 });
 
-// document.querySelector("#range").addEventListener("click", function() {})
+function uvd(){
+	var percentage=Math.round(video.volume*100)
+	volumedisplay.textContent =percentage+"%";
+}
+
+volumeslider.addEventListener("input", function() {
+	video.volume=(volumeslider.value/100);
+	uvd()
+});
+
+document.querySelector("#vintage").addEventListener("click", function() {
+	video.classList.add('old-school')
+	console.log('old school')
+})
+
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove('old-school')
+	console.log('original')
+})
